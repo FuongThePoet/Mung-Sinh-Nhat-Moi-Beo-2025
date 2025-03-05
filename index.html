@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng sinh nhật!</title>
+    <style>
+        body {
+            background-image: url('Hinhnen.jpg'); /* Hình nền tải sẵn */
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #message-container {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+        }
+        #image-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .image-wrapper {
+            display: none;
+        }
+        #image-container img {
+            width: 500px;
+            height: auto;
+        }
+        .caption {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="Obito - -tell the kids i love them- ft. Shiki (Official MV).mp3" type="audio/mpeg"> <!-- Nhạc nền tải sẵn -->
+    </audio>
+    
+    <div class="container" id="password-container">
+        <h1>Hãy nhập password để tiếp tục!</h1>
+        <input type="password" id="password" placeholder="Nhập ngày sinh (dd/mm/yyyy)">
+        <button onclick="checkPassword()">Xác nhận</button>
+        <p id="error" style="color: red;"></p>
+    </div>
+    
+    <div id="message-container"></div>
+    <div id="image-container">
+        <div class="image-wrapper">
+            <img src="Hinh1.jpg" alt="Chúc mừng sinh nhật 1">
+            <div class="caption"></div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh2.jpg" alt="Chúc mừng sinh nhật 2">
+            <div class="caption"></div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh3.jpg" alt="Chúc mừng sinh nhật 3">
+            <div class="caption"> ❤️</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh4.jpg" alt="Chúc mừng sinh nhật 4">
+            <div class="caption">❤️</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh5.jpg" alt="Chúc mừng sinh nhật 5">
+            <div class="caption">💘</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh6.jpg" alt="Chúc mừng sinh nhật 6">
+            <div class="caption"></div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh7.jpg" alt="Chúc mừng sinh nhật 7">
+            <div class="caption">👉👈</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh8.jpg" alt="Chúc mừng sinh nhật 8">
+            <div class="caption">👉👈</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh9.jpg" alt="Chúc mừng sinh nhật 9">
+            <div class="caption">🎂️🎶</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh10.jpg" alt="Chúc mừng sinh nhật 10">
+            <div class="caption"> 🌷</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh11.jpg" alt="Chúc mừng sinh nhật 9">
+            <div class="caption">🎂️🎶</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh12.jpg" alt="Chúc mừng sinh nhật 9">
+            <div class="caption">🎂️🎶</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh13.jpg" alt="Chúc mừng sinh nhật 9">
+            <div class="caption">🎂️🎶</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="Hinh14.jpg" alt="Chúc mừng sinh nhật 9">
+            <div class="caption">🎂️🎶</div>
+        </div>
+        <div class="image-wrapper">
+            <img src="hinh15.jpg" alt="Chúc mừng sinh nhật 9">
+            <div class="caption">🎂️🎶</div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("click", function() {
+            var audio = document.getElementById("bg-music");
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+
+        function checkPassword() {
+            var pass = document.getElementById("password").value;
+            if (pass === "26/03/2006") {
+                document.getElementById("password-container").style.display = "none";
+                document.getElementById("message-container").style.display = "block";
+                showMessages();
+            } else {
+                document.getElementById("error").innerText = "Sai mật khẩu! Hãy thử lại.";
+            }
+        }
+
+        function showMessages() {
+            let messages = [
+                "🎉 Chúc mừng sinh nhật tuổi 19 nha bạn tốt của t! 🎂",
+                "💖 Chúc m tuổi mới tràn ngập năng lượng, sự lạc quan, niềm hi vọng và khát khao cống hiến cho cuộc sống. ✨",
+                "🎁 Tuy khoảng thời gian làm bạn của chúng ta chỉ mới kéo dài từ năm cấp 3 đến giờ nhưng t thực sự trân trọng nó. 🎊",
+                "😍 M là đứa luôn mang lại sự tích cực cho mọi người và đặc biệt trong đó có t. 💕",
+                "✊ Cảm ơn m đã chia sẻ, giúp đỡ  t rất nhiều lần m thực sự là một người bạn tốt đối với t. 👣",
+                "🤓 Hãy cố gắng hoàn thiện bản thân nhưng đừng quên chăm sóc cho nó hãy là chính con người m hằng mong ước!",
+                "Lời cuối t chúc m tuổi m thành công mới, hạnh phúc mới và hoàn thành mục tiêu m đã đặt ra",
+                "Bạn yêu của m",
+                "Hoài Phương 💗",
+                "Giờ thì xem m đã lớn như nào nha ku ️🎉️🎈"
+            ];
+            let messageContainer = document.getElementById("message-container");
+            let index = 0;
+            
+            function displayNextMessage() {
+                if (index < messages.length) {
+                    messageContainer.innerText = messages[index];
+                    index++;
+                    setTimeout(displayNextMessage, 7000);
+                } else {
+                    document.getElementById("message-container").style.display = "none";
+                    showImages();
+                }
+            }
+            
+            displayNextMessage();
+        }
+
+        function showImages() {
+            let images = document.querySelectorAll(".image-wrapper");
+            let index = 0;
+            document.getElementById("image-container").style.display = "block";
+            
+            function displayNextImage() {
+                if (index > 0) {
+                    images[index - 1].style.display = "none";
+                }
+                if (index < images.length) {
+                    images[index].style.display = "block";
+                    index++;
+                    setTimeout(displayNextImage, 7000);
+                }
+            }
+            
+            displayNextImage();
+        }
+    </script>
+</body>
+</html>
